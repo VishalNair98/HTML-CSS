@@ -1,0 +1,16 @@
+.Ingredients
+{
+font-style: italic;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+background-color:sienna;
+}
+.Instructions
+{
+font-style: italic;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+background-color:saddlebrown;
+}
+body
+{
+    background-color: darkkhaki;
+}

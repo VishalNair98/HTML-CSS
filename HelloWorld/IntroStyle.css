@@ -1,0 +1,9 @@
+body{
+    background-color: aquamarine;
+}
+
+p{
+    color: slateblue;
+    /* size: 24px; */
+    font-size: 20px;
+}
