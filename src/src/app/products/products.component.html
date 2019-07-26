@@ -1,0 +1,56 @@
+<div class = "container">
+<div class="label">
+    <label>Product ID</label>
+    <input name="id" type="text" pattern="([1-9]).{1,}([0-9].{4,})" required maxlength="5" #firstName=ngModel [(ngModel)]name="prodId">
+    <div *ngIf = "id.invalid && id.dirty" class="alert alert-danger">
+    <div *ngIf = "id.errors.required"> Please Enter Id</div>   
+    <div *ngIf = "id.errors.maxlength">Please enter a valid Id</div>
+    </div>
+</div>
+<div class="label">
+    <label>Product Name</label>
+    <input type="text" pattern="(?=.*[a-z])(?=.*[A-Z])" required maxlength="10" title="Must be alphabets, neither numeric nor alphanumeric" [(ngModel)]="prodId">
+    <div *ngIf= "name.invalid && name.dirty" class="alert alert-danger">
+     <div *ngIf= "name.errors.required">Please Enter Name</div>
+     <div *ngIf= "name.errors.maxlength">Too Long</div>
+    </div>
+</div>
+<div class="label">
+    <label>Product Cost</label>
+    <input type="text" pattern="(?=.*\d)" required maxlength="6" [(ngModel)]="prodId">
+    <div *ngIf= "cost.invalid && cost.dirty" class="alert alert-danger">
+    <div *ngIf= "cost.errors.required">Please Enter Cost</div>
+    <div *ngIf= "cost.errors.maxlength">Cost too much</div>
+    </div>
+</div>
+
+<div class="label">
+    <label>Product Online</label>
+    <input type="radio"  id="defaultChecked">Yes
+    <input type="radio"  id="defaultChecked">No
+</div>
+
+<div class="label">
+    <label>Product Category</label>
+    <select>
+            <option></option>
+        <option>Groceries</option>
+        <option>Dressing and Grooming</option>
+        <option>Gifts</option>
+        <option>Home Appliances</option>
+        <option>Mobiles</option>
+        <option>Computers/Laptops</option>
+    </select>
+</div>
+<div>
+    <label>Available in Store</label>
+    <input type="checkbox">Big Bazar
+    <input type="checkbox">DMart
+    <input type="checkbox">Reliance
+    <input type="checkbox">Mega Store
+</div>
+<div>
+    <button type="submit">AddProduct</button>
+</div>
+        
+</div>
