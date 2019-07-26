@@ -1,0 +1,74 @@
+<div>Angular 2 Operation</div>
+
+    <div>
+        <label>ID</label>
+        <input type="text" [(ngModel)]="id">
+    </div>
+    <div>
+        <label>NAME</label>
+        <input type="text" [(ngModel)]="name">
+    </div>
+    <div>
+        <label>SALARY</label>
+        <input type="text" [(ngModel)]="sal">
+    </div>
+    <div>
+        <label>DEPT</label>
+        <input type="text" [(ngModel)]="dept">
+    </div>
+    <div>
+        <button (click)="display()">Add Employee</button>
+    </div>
+    <div>
+        {{id}} {{name}} {{sal}} {{dept}}
+    </div>
+
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>DEPT</th>
+            <th colspan="2">ACTION</th>
+
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let data of employees">
+                <!-- <td>{{data.id}}</td> -->
+                <td>
+                    <div *ngIf="!data.isEdit">{{data.id}}</div>
+                        <input type="text" [(ngModel)]="data.id" *ngIf="data.isEdit" />
+                </td>
+
+                <!-- <td>{{data.name}}</td> -->
+                <td>
+                    <div *ngIf="!data.isEdit">{{data.name}}</div>
+                        <input type="text" [(ngModel)]="data.name" *ngIf="data.isEdit" />
+                </td>
+                <!-- <td>{{data.salary}}</td> -->
+                <td>
+                    <div *ngIf="!data.isEdit">{{data.sal}}</div>
+                        <input type="text" [(ngModel)]="data.sal" *ngIf="data.isEdit" />
+                </td>
+                <!-- <td>{{data.dept}}</td> -->
+                <td>
+                    <div *ngIf="!data.isEdit">{{data.dept}}</div>
+                        <input type="text" [(ngModel)]="data.dept" *ngIf="data.isEdit" />
+                </td>
+                <td>
+                    <button (click) = "data.isEdit=!data.isEdit" *ngIf="!data.isEdit">UPDATE</button>
+                    <button *ngIf="data.isEdit" (click) = "data.isEdit=!data.isEdit">SAVE</button>
+                   
+                </td>
+                <td><button (click) ="delete(data)">DELETE</button></td>
+               
+                <!-- <td>
+                    <button (click) ="addDetails()">UPDATE</button>
+                    <button (click) ="delete(data)">DELETE</button>
+                </td>  -->
+
+            </tr>
+        </tbody>
+    </table>
+    <button (click) ="addDetails()">ADD</button>
